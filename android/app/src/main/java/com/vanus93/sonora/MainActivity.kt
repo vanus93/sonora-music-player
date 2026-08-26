@@ -89,7 +89,7 @@ class MainActivity : Activity() {
         equalizer?.release(); equalizer = Equalizer(0, media.audioSessionId).apply { enabled = true }
         val layout = findViewById<LinearLayout>(R.id.equalizerLayout); layout.removeAllViews()
         val range = equalizer?.bandLevelRange ?: shortArrayOf(-1200, 1200)
-        for (band in 0 until (equalizer?.numberOfBands ?: 0)) { val seek = SeekBar(this); seek.max = range[1] - range[0]; seek.progress = -(range[0].toInt()); seek.rotation = -90f; seek.layoutParams = LinearLayout.LayoutParams(52, 120); seek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener { override fun onProgressChanged(bar: SeekBar?, value: Int, fromUser: Boolean) { if (fromUser) equalizer?.setBandLevel(band.toShort(), (value + range[0]).toShort()) }; override fun onStartTrackingTouch(bar: SeekBar?) = Unit; override fun onStopTrackingTouch(bar: SeekBar?) = Unit }); layout.addView(seek) }
+        for (band in 0 until (equalizer?.numberOfBands?.toInt() ?: 0)) { val seek = SeekBar(this); seek.max = range[1] - range[0]; seek.progress = -(range[0].toInt()); seek.rotation = -90f; seek.layoutParams = LinearLayout.LayoutParams(52, 120); seek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener { override fun onProgressChanged(bar: SeekBar?, value: Int, fromUser: Boolean) { if (fromUser) equalizer?.setBandLevel(band.toShort(), (value + range[0]).toShort()) }; override fun onStartTrackingTouch(bar: SeekBar?) = Unit; override fun onStopTrackingTouch(bar: SeekBar?) = Unit }); layout.addView(seek) }
     }
 
     private fun togglePlayback() { val media = player ?: return; if (media.isPlaying) { media.pause(); playButton.text = "▶" } else { media.start(); playButton.text = "Ⅱ" } }

@@ -2,6 +2,8 @@
 
 Pemutar musik lokal berbasis browser dengan queue, sleep timer, dan equalizer 8-band berbasis Web Audio API.
 
+Demo online: aktifkan GitHub Pages dengan source **GitHub Actions** pada repository ini.
+
 ## Menjalankan
 
 ```bash

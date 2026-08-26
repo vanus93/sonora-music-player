@@ -1,5 +1,5 @@
-const CACHE_NAME = 'sonora-shell-v1';
-const APP_SHELL = ['/', '/index.html', '/manifest.webmanifest'];
+const CACHE_NAME = 'sonora-shell-v2';
+const APP_SHELL = ['/sonora-music-player/', '/sonora-music-player/index.html', '/sonora-music-player/manifest.webmanifest', '/sonora-music-player/icon.svg'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));

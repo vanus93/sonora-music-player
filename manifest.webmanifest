@@ -1,10 +1,19 @@
 {
   "name": "Sonora Offline Music Player",
   "short_name": "Sonora",
-  "start_url": "/",
+  "start_url": "/sonora-music-player/",
+  "scope": "/sonora-music-player/",
   "display": "standalone",
   "background_color": "#101518",
   "theme_color": "#101518",
   "description": "Pemutar musik lokal offline dengan equalizer dan sleep timer.",
-  "categories": ["music", "entertainment"]
+  "categories": ["music", "entertainment"],
+  "icons": [
+    {
+      "src": "/sonora-music-player/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
